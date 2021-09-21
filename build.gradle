@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'me.twoleggedcat'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest.attributes(
+            'Main-Class': 'me.twoleggedcat.whatthejava.WhatTheJava'
+    )
+}
+
+compileJava {
+    options.release = 7
+}
+
+build {
+    dependsOn jar
+}
+
+test {
+    useJUnitPlatform()
+}
